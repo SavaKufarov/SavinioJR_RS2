@@ -22,6 +22,9 @@ namespace BusinessLayer
         public int? FriendsId { get; set; }
         public int? DistrictId { get; set; }
 
+        public List<User> Friends { get; set; } = new List<User>();
+        public List<Interest> Interests { get; set; } = new List<Interest>();
+
         public virtual ICollection<Userfriend> Userfriends { get; set; }
     }
 }

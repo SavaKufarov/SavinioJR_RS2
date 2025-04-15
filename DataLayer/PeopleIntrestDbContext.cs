@@ -1,4 +1,5 @@
 ﻿using System;
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -8,7 +9,7 @@ namespace BusinessLayer
 {
     public partial class PeopleIntrestDbContext : DbContext
     {
-        public PeopleIntrestDbContext()
+        public PeopleIntrestDbContext(DbContextOptions options)
         {
         }
 
@@ -21,6 +22,7 @@ namespace BusinessLayer
         public virtual DbSet<Interest> Interests { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Userfriend> Userfriends { get; set; }
+        public DbSet<District> Districts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
